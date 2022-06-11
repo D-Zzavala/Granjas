@@ -22,6 +22,12 @@ public class Animal {
         this.Precio = Precio;
         this.Tipo = Tipo;
     }
+    
+    public Animal(float Peso, float Precio, String Tipo) {
+        this.Peso = Peso;
+        this.Precio = Precio;
+        this.Tipo = Tipo;
+    }
 
     public float getPeso() {
         return Peso;

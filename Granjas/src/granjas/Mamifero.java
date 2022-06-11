@@ -16,17 +16,7 @@ public class Mamifero extends Animal{
     public Mamifero() {
     }
 
-    public Mamifero(String Ganado, float Peso, float Precio, String Tipo) {
+    public Mamifero( float Peso, float Precio, String Tipo) {
         super(Peso, Precio, Tipo);
-        this.Ganado = Ganado;
     }
-
-    public String getGanado() {
-        return Ganado;
-    }
-
-    public void setGanado(String Ganado) {
-        this.Ganado = Ganado;
-    }
-    
 }

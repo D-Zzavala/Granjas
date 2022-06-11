@@ -16,18 +16,8 @@ public class Pez extends Animal {
     public Pez() {
     }
 
-    public Pez(boolean ASalada, float Peso, float Precio, String Tipo) {
+    public Pez( float Peso, float Precio, String Tipo) {
         super(Peso, Precio, Tipo);
-        this.ASalada = ASalada;
     }
-
-    public boolean isASalada() {
-        return ASalada;
-    }
-
-    public void setASalada(boolean ASalada) {
-        this.ASalada = ASalada;
-    }
-    
     
 }

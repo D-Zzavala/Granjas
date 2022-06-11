@@ -10,6 +10,7 @@ package granjas;
  * @author 50431
  */
 public class Persona {
+    
     private String Nombre, Apellido;
     private int ID, Celular;
     

@@ -18,16 +18,6 @@ private boolean volador;
 
     public Ave(boolean volador, float Peso, float Precio, String Tipo) {
         super(Peso, Precio, Tipo);
-        this.volador = volador;
     }
-
-    public boolean isVolador() {
-        return volador;
-    }
-
-    public void setVolador(boolean volador) {
-        this.volador = volador;
-    }
-
 
 }
