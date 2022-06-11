@@ -6,7 +6,7 @@ public class Empleado extends Persona {
     private String Puesto, Jornada;
     private int Salario;
 
-public Empleado() {//Constructor Vacío (Creado por el Programador)
+    public Empleado() {//Constructor Vacío (Creado por el Programador)
     super();
     this.Puesto= "";
     this.Jornada = "";
