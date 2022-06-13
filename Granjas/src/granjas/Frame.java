@@ -61,8 +61,6 @@ public class Frame extends javax.swing.JFrame {
         PesoPez = new javax.swing.JFormattedTextField();
         SavePez = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jLabel23 = new javax.swing.JLabel();
-        CalidadAve = new javax.swing.JComboBox<>();
         jLabel24 = new javax.swing.JLabel();
         RazaAve = new javax.swing.JComboBox<>();
         jLabel25 = new javax.swing.JLabel();
@@ -74,6 +72,8 @@ public class Frame extends javax.swing.JFrame {
         DateAve = new com.toedter.calendar.JDateChooser();
         PesoAve = new javax.swing.JFormattedTextField();
         SaveAve = new javax.swing.JButton();
+        jLabel35 = new javax.swing.JLabel();
+        EdadAve = new javax.swing.JFormattedTextField();
         jPanel3 = new javax.swing.JPanel();
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
@@ -253,15 +253,6 @@ public class Frame extends javax.swing.JFrame {
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel23.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel23.setText("Calidad");
-        jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 90, 50));
-
-        CalidadAve.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        CalidadAve.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel2.add(CalidadAve, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 130, -1));
-
         jLabel24.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(204, 204, 204));
         jLabel24.setText("Raza");
@@ -310,7 +301,24 @@ public class Frame extends javax.swing.JFrame {
         SaveAve.setBorder(null);
         SaveAve.setBorderPainted(false);
         SaveAve.setContentAreaFilled(false);
+        SaveAve.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveAveActionPerformed(evt);
+            }
+        });
         jPanel2.add(SaveAve, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 410, 70, 50));
+
+        jLabel35.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel35.setText("Edad");
+        jPanel2.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 90, 50));
+
+        try {
+            EdadAve.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jPanel2.add(EdadAve, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 130, 30));
 
         jTabbedPane1.addTab("AVE", jPanel2);
 
@@ -369,6 +377,11 @@ public class Frame extends javax.swing.JFrame {
         SaveMami.setBorder(null);
         SaveMami.setBorderPainted(false);
         SaveMami.setContentAreaFilled(false);
+        SaveMami.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveMamiActionPerformed(evt);
+            }
+        });
         jPanel3.add(SaveMami, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 410, 70, 50));
 
         try {
@@ -557,7 +570,7 @@ public class Frame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    ArrayList<Object> ALPez = new ArrayList<>();
+    ArrayList<Pez> ALPez = new ArrayList<>();
     ArrayList<Object> ALAve = new ArrayList<>();
     ArrayList<Object> ALMami = new ArrayList<>();
     ArrayList<Object> ALPersonas = new ArrayList<>();
@@ -672,7 +685,9 @@ public class Frame extends javax.swing.JFrame {
 
     private void SavePezActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SavePezActionPerformed
         try {
-            String Calidad = CalidadPez.getSelectedItem().toString(), Raza=RazaPez.getSelectedItem().toString(), Funcion=FunciónPez.getSelectedItem().toString();
+            String Calidad = CalidadPez.getSelectedItem().toString(), 
+                    Raza = RazaPez.getSelectedItem().toString(), 
+                    Funcion = FunciónPez.getSelectedItem().toString();
             char[] Codigo = CodigoPEz.getText().toCharArray();
             JDateChooser Nacimiento = DatePez;
             float Peso = Float.parseFloat(PesoPez.getText());
@@ -681,9 +696,35 @@ public class Frame extends javax.swing.JFrame {
         } catch (Exception e) {
         }
     }//GEN-LAST:event_SavePezActionPerformed
-    private void PrintAL(ArrayList AL){
-        
-    }
+
+    private void SaveAveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveAveActionPerformed
+        try {
+            int Edad = Integer.parseInt(EdadAve.getText());
+            String Raza = RazaAve.getSelectedItem().toString(), 
+                   Funcion = FuncionAve.getSelectedItem().toString();
+            char[] Codigo = CodigoAve.getText().toCharArray();
+            JDateChooser Nacimiento = DateAve;
+            float Peso = Float.parseFloat(PesoAve.getText());
+            Ave temp = new Ave(Edad, Raza, Funcion, Codigo, Nacimiento, Peso);
+            ALAve.add(temp);
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_SaveAveActionPerformed
+
+    private void SaveMamiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveMamiActionPerformed
+        try {
+            int Edad = Integer.parseInt(EdadMami.getText());
+            String Raza = RazaMami.getSelectedItem().toString(), 
+                   Funcion = FuncionMAmi.getSelectedItem().toString();
+            char[] Codigo = CodigoMami.getText().toCharArray();
+            JDateChooser Nacimiento = DateMami;
+            float Peso = Float.parseFloat(PesoMami.getText());
+            Mamifero temp = new Mamifero(Edad, Raza, Funcion, Codigo, Nacimiento, Peso);
+            ALMami.add(temp);
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_SaveMamiActionPerformed
+    
     /**
      * @param args the command line arguments
      */
@@ -720,7 +761,6 @@ public class Frame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> CalidadAve;
     private javax.swing.JComboBox<String> CalidadPez;
     private javax.swing.JFormattedTextField CodigoAve;
     private javax.swing.JFormattedTextField CodigoMami;
@@ -728,6 +768,7 @@ public class Frame extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser DateAve;
     private com.toedter.calendar.JDateChooser DateMami;
     private com.toedter.calendar.JDateChooser DatePez;
+    private javax.swing.JFormattedTextField EdadAve;
     private javax.swing.JFormattedTextField EdadMami;
     private javax.swing.JComboBox<String> Eleccion;
     private javax.swing.JLabel Fondo;
@@ -784,7 +825,6 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
@@ -797,6 +837,7 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

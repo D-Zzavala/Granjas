@@ -1,6 +1,7 @@
 
 package granjas;
 
+import com.toedter.calendar.JDateChooser;
 import java.util.Date;
 
 public class Ave extends Animal {
@@ -11,7 +12,7 @@ public class Ave extends Animal {
     }
    
    public Ave(int Edad, String Raza, String Funcion, 
-           char[] Codigo, Date Nacimiento, float Peso) {
+           char[] Codigo, JDateChooser Nacimiento, float Peso) {
         super(Raza, Funcion, Codigo, Nacimiento, Peso);
         this.Edad = Edad;
     }
