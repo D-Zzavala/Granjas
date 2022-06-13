@@ -1,6 +1,7 @@
 
 package granjas;
 
+import com.toedter.calendar.JDateChooser;
 import java.util.Date;
 
 public class Pez extends Animal{
@@ -9,7 +10,8 @@ public class Pez extends Animal{
     public Pez() {
     }
 
-    public Pez(String Calidad, String Raza, String Funcion, char[] Codigo, Date Nacimiento, float Peso) {
+    public Pez(String Calidad, String Raza, String Funcion, 
+            char[] Codigo, JDateChooser Nacimiento, float Peso) {
         super(Raza, Funcion, Codigo, Nacimiento, Peso);
         this.Calidad = Calidad;
     }

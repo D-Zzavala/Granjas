@@ -1,19 +1,20 @@
 
 package granjas;
 
+import com.toedter.calendar.JDateChooser;
 import java.util.Date;
 
 public class Animal {
     
     private String Raza, Funcion;
     private char[] Codigo;
-    private Date Nacimiento;
+    private JDateChooser Nacimiento;
     private float Peso;
 
     public Animal() {
     }
 
-    public Animal(String Raza, String Funcion, char[] Codigo, Date Nacimiento, float Peso) {
+    public Animal(String Raza, String Funcion, char[] Codigo, JDateChooser Nacimiento, float Peso) {
         this.Raza = Raza;
         this.Funcion = Funcion;
         this.Codigo = Codigo;
@@ -45,11 +46,11 @@ public class Animal {
         this.Codigo = Codigo;
     }
 
-    public Date getNacimiento() {
+    public JDateChooser getNacimiento() {
         return Nacimiento;
     }
 
-    public void setNacimiento(Date Nacimiento) {
+    public void setNacimiento(JDateChooser Nacimiento) {
         this.Nacimiento = Nacimiento;
     }
 

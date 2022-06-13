@@ -10,7 +10,8 @@ public class Ave extends Animal {
     public Ave() {
     }
    
-   public Ave(int Edad, String Raza, String Funcion, char[] Codigo, Date Nacimiento, float Peso) {
+   public Ave(int Edad, String Raza, String Funcion, 
+           char[] Codigo, Date Nacimiento, float Peso) {
         super(Raza, Funcion, Codigo, Nacimiento, Peso);
         this.Edad = Edad;
     }
