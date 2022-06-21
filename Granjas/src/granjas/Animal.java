@@ -1,4 +1,3 @@
-
 package granjas;
 
 import com.toedter.calendar.JDateChooser;

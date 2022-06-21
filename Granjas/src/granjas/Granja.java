@@ -20,7 +20,7 @@ public abstract class Granja {
         if (Cant <= -1) {
             JOptionPane.showMessageDialog(null, "Dato Incorrecto\n"
                     + "Vuelva a Intentarlo");
-            Cant = ValidarInt(Texto);//Llamado Recursivo
+            Cant = ValidarInt(Texto);
         }
         return Cant;
     }
@@ -37,7 +37,7 @@ public abstract class Granja {
         }
     }
     
-    public String ValidarCorreo( String Nombre ){//c@2.l
+    public String ValidarCorreo( String Nombre ){
         String Correo = JOptionPane.showInputDialog("Ingrese el Correo de "+Nombre+": ");
         boolean Arroba = false;
         boolean Punto = false;

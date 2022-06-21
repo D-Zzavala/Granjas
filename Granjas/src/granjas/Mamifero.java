@@ -9,10 +9,9 @@ public class Mamifero extends Animal {
     public Mamifero() {
     }
 
-    public Mamifero(int Edad, String Raza, String Funcion, 
-            char[] Codigo, JDateChooser Nacimiento, float Peso) {
-        super(Raza, Funcion, Codigo, Nacimiento, Peso);
-        this.Edad = Edad;
+    public Mamifero(int Edad, String Raza, String Funcion, char[] Codigo, JDateChooser Nacimiento, float Peso) {
+      super(Raza, Funcion, Codigo, Nacimiento, Peso);
+      this.Edad = Edad;
     }
 
     public int getEdad() {
