@@ -1,10 +1,10 @@
 package granjas;
 
 import com.toedter.calendar.JDateChooser;
+import java.io.PrintWriter;
 import java.util.Date;
 
-public class Animal {
-    
+public class Animal extends Granja {
     private String Raza, Funcion;
     private char[] Codigo;
     private JDateChooser Nacimiento;
@@ -64,6 +64,26 @@ public class Animal {
     @Override
     public String toString() {
         return "Animal{" + "Raza=" + Raza + ", Funcion=" + Funcion + ", Codigo=" + Codigo + ", Nacimiento=" + Nacimiento + ", Peso=" + Peso + '}';
+    }
+
+    @Override
+    public void Leer(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void ImprimirCLI(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void Borde() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void Guardar(PrintWriter Linea) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
     

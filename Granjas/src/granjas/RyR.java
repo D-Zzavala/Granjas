@@ -3,7 +3,7 @@ import java.io.PrintWriter;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
-public class RyR {
+public class RyR extends Granja{
 
 private Date Registrovent;
 private Date Registropro;
@@ -53,6 +53,26 @@ private Date Reportesmant;
     public String toString(){
         return "RyR{" + ", Regristrovent=" + Registrovent + ", Registropro=" + Registropro + ", Reportesmant=" + Reportesmant + '}';
     }//fin
+
+    @Override
+    public void Leer(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void ImprimirCLI(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void Borde() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void Guardar(PrintWriter Linea) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 
 

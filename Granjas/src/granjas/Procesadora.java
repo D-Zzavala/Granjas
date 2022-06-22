@@ -1,12 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package granjas;
 import java.io.PrintWriter;
 import javax.swing.JOptionPane;
 
-public class Procesadora {
+public class Procesadora extends Granja{
     
 private int Cantidad;
 private String Productos;
@@ -67,7 +64,27 @@ private String Consumidores;
     public String toString(){
         return "Procesadora{" + ", Cantidad=" + Cantidad + ", Productos=" + Productos + ", Ingresos=" + Ingresos + ", Consumidores=" + Consumidores + '}';
     }//fin
+
+    @Override
+    public void Leer(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void ImprimirCLI(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void Borde() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void Guardar(PrintWriter Linea) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 
     
-}//fin class
+}

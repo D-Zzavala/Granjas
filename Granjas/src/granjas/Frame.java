@@ -97,8 +97,8 @@ public class Frame extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        TField_Usuario = new javax.swing.JTextField();
-        PW_Clave = new javax.swing.JPasswordField();
+        TField_User = new javax.swing.JTextField();
+        PW_Password = new javax.swing.JPasswordField();
         Fondo = new javax.swing.JLabel();
 
         Principal.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -538,25 +538,20 @@ public class Frame extends javax.swing.JFrame {
         jLabel3.setText("Granjas el Tijuilote");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 430, 80));
 
-        TField_Usuario.setBackground(new java.awt.Color(75, 75, 75));
-        TField_Usuario.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        TField_Usuario.addActionListener(new java.awt.event.ActionListener() {
+        TField_User.setBackground(new java.awt.Color(75, 75, 75));
+        TField_User.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        TField_User.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TField_UsuarioActionPerformed(evt);
+                TField_UserActionPerformed(evt);
             }
         });
-        getContentPane().add(TField_Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, 130, -1));
+        getContentPane().add(TField_User, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, 130, -1));
 
-        PW_Clave.setBackground(new java.awt.Color(75, 75, 75));
-        PW_Clave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PW_ClaveActionPerformed(evt);
-            }
-        });
-        getContentPane().add(PW_Clave, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, 130, 30));
+        PW_Password.setBackground(new java.awt.Color(75, 75, 75));
+        getContentPane().add(PW_Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, 130, 30));
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/fondo.jpg"))); // NOI18N
-        getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 477, 706));
+        getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 477, 706));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -574,7 +569,10 @@ public class Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_JButt_SalirActionPerformed
 
     private void JButt_IngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButt_IngresarActionPerformed
-
+        Principal.pack();
+        Principal.setVisible(true);
+        Principal.setLocationRelativeTo(this);
+        this.setVisible(false);
     }//GEN-LAST:event_JButt_IngresarActionPerformed
 
     private void JButt_SessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButt_SessionActionPerformed
@@ -713,13 +711,9 @@ public class Frame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_SaveMamiActionPerformed
 
-    private void TField_UsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TField_UsuarioActionPerformed
+    private void TField_UserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TField_UserActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TField_UsuarioActionPerformed
-
-    private void PW_ClaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PW_ClaveActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_PW_ClaveActionPerformed
+    }//GEN-LAST:event_TField_UserActionPerformed
     
 
     public static void main(String args[]) {
@@ -790,7 +784,7 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JButton JButt_MenPrin5;
     private javax.swing.JButton JButt_Salir;
     private javax.swing.JButton JButt_Session;
-    private javax.swing.JPasswordField PW_Clave;
+    private javax.swing.JPasswordField PW_Password;
     private javax.swing.JFormattedTextField PesoAve;
     private javax.swing.JFormattedTextField PesoMami;
     private javax.swing.JFormattedTextField PesoPez;
@@ -807,7 +801,7 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JButton SaveAve;
     private javax.swing.JButton SaveMami;
     private javax.swing.JButton SavePez;
-    private javax.swing.JTextField TField_Usuario;
+    private javax.swing.JTextField TField_User;
     private javax.swing.JFormattedTextField jFormattedTextField8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
