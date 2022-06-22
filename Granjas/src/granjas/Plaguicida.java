@@ -17,7 +17,24 @@ public Plaguicida() {
         this.Toxicidad = Toxicidad;
     }
 
+    public void setAplicacion(String Aplicacion) {
+        this.Aplicacion = Aplicacion;
+    }
 
+    public void setToxicidad(String Toxicidad) {
+        this.Toxicidad = Toxicidad;
+    }
+
+    public String getAplicacion() {
+        return Aplicacion;
+    }
+
+    public String getToxicidad() {
+        return Toxicidad;
+    }
+
+    
+    
 @Override
     public String toString() {
         return "Empleado{" + super.toString() + ", Aplicacion=" + Aplicacion + ", Toxicidad=" +Toxicidad + '}';

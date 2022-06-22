@@ -158,13 +158,11 @@ public class Tijuilote {
                 Linea.print("Fecha de Caducidad\tCantidad\tProductos\tIngresos\tConsumidores\n");                
                 break;
             case 'n':
-                Linea.print("Egrosos Mensuales\tEgresos Semanales\tRegisto de ventas\tRegistro de Produccion\tReporte de Mantenimiento\n");                
+                Linea.print("Egresos Mensuales\tEgresos Semanales\tRegisto de ventas\tRegistro de Produccion\tReporte de Mantenimiento\n");                
                 break;
             case 'o':
-                Linea.print("Ingrosos Mensuales\tIngresos Semanales\tRegisto de ventas\tRegistro de Produccion\tReporte de Mantenimiento\n");                
-                break;
-           
-
+                Linea.print("Ingresos Mensuales\tIngresos Semanales\tRegisto de ventas\tRegistro de Produccion\tReporte de Mantenimiento\n");                
+                break;       
         }
         for (int i = 0; i < A.length; i++) {
             if(A[i] instanceof Empleado && Op=='a'   ||
@@ -204,6 +202,228 @@ public class Tijuilote {
         return tmpA;
     }
     
+          public char MenuModificarEmpleado() {
+        char Op;
+
+        Op = JOptionPane.showInputDialog("***Menú Modificar***\n"
+                + "a.-> Puesto.\n"
+                + "b.-> Jornada.\n"
+                + "c.-> Salario.\n"
+                + "d.-> Identidad.\n"
+                + "e.-> Nombre.\n"
+                + "f.-> Codigo.\n"
+                + "g.-> Edad.\n"
+                + "h.-> Genero.\n"
+                + "i.-> Celular.\n"
+                + "j.-> Correo.\n"
+                + "Su Elección Es:").toLowerCase().charAt(0);
+
+        if (Op < 'a' || Op > 'j') {
+            JOptionPane.showMessageDialog(null, "La Opción Ingresada NO Existe!!!\n"
+                    + "Favor Vuelva a Intentarlo!!!");
+            Op = MenuModificarEmpleado();
+        }
+        return Op;
+    }
       
+      public Empleado Modificar(Empleado P) {
+        char OpMod;
+        
+        OpMod = MenuModificarEmpleado();
+        switch (OpMod) {
+            case 'a':
+                P.setPuesto(JOptionPane.showInputDialog("Ingrese el Nuevo Puesto de " + P.getNombre() + ": "));           
+                break;
+            case 'b':
+                P.setJornada(JOptionPane.showInputDialog("Ingrese la Nueva Jornada de " + P.getNombre() + ": "));
+                break;
+            case 'c':
+                P.setSalario((JOptionPane.showInputDialog("Ingrese el Nuevo Salario de " + P.getNombre() + ": ")));
+                break;
+            case 'd':
+                P.setIdentidad(JOptionPane.showInputDialog("Ingrese la Nueva Identidad de " + P.getNombre() + ": ").toCharArray());
+                break;
+            case 'e':
+                P.setNombre(JOptionPane.showInputDialog("Ingrese el Nuevo Nombre de " + P.getNombre() + ": "));
+                break;
+            case 'f':
+                P.setCodigo(JOptionPane.showInputDialog("Ingrese el Nuevo Codigo de " + P.getNombre() + ": ").toCharArray());
+                break;
+            case 'g':
+                P.setNombre(JOptionPane.showInputDialog("Ingrese la Nueva Edad de " + P.getNombre() + ": "));
+                break;
+            case 'h':
+                P.setGenero(P.ValidarGen(P.getNombre()));
+                break;
+            case 'i':
+                P.setCelular(JOptionPane.showInputDialog("Ingrese el Nuevo Celular de " + P.getNombre() + ": ").toCharArray());
+                break;
+            case 'j':
+                P.setCorreo(P.ValidarCorreo(P.getNombre()));
+                break;
+        }
+        return P;
+    }
+      
+      public char MenuModificarSocio() {
+        char Op;
+
+        Op = JOptionPane.showInputDialog("***Menú Modificar***\n"
+                + "a.-> Empresa.\n"
+                + "b.-> Ingresos.\n"
+                + "c.-> POrcentaje.\n"
+                + "d.-> Identidad.\n"
+                + "e.-> Nombre.\n"
+                + "f.-> Codigo.\n"
+                + "g.-> Edad.\n"
+                + "h.-> Genero.\n"
+                + "i.-> Celular.\n"
+                + "j.-> Correo.\n"
+                + "Su Elección Es:").toLowerCase().charAt(0);
+
+        if (Op < 'a' || Op > 'j') {
+            JOptionPane.showMessageDialog(null, "La Opción Ingresada NO Existe!!!\n"
+                    + "Favor Vuelva a Intentarlo!!!");
+            Op = MenuModificarSocio();
+        }
+        return Op;
+    }
+      
+      public Socio Modificar(Socio P) {
+        char OpMod;
+        
+        OpMod = MenuModificarSocio();
+        switch (OpMod) {
+            case 'a':
+                P.setEmpresa(JOptionPane.showInputDialog("Ingrese la Nueva Empresa de " + P.getNombre() + ": "));           
+                break;
+            case 'b':
+                P.setIngreso((JOptionPane.showInputDialog("Ingrese los Nuevos Ingresos de " + P.getNombre() + ": ")));
+                break;
+            case 'c':
+                P.setPorcentaje((JOptionPane.showInputDialog("Ingrese el Nuevo Porcentaje de " + P.getNombre() + ": ")));
+                break;
+            case 'd':
+                P.setIdentidad(JOptionPane.showInputDialog("Ingrese la Nueva Identidad de " + P.getNombre() + ": ").toCharArray());
+                break;
+            case 'e':
+                P.setNombre(JOptionPane.showInputDialog("Ingrese el Nuevo Nombre de " + P.getNombre() + ": "));
+                break;
+            case 'f':
+                P.setCodigo(JOptionPane.showInputDialog("Ingrese el Nuevo Codigo de " + P.getNombre() + ": ").toCharArray());
+                break;
+            case 'g':
+                P.setNombre(JOptionPane.showInputDialog("Ingrese la Nueva Edad de " + P.getNombre() + ": "));
+                break;
+            case 'h':
+                P.setGenero(P.ValidarGen(P.getNombre()));
+                break;
+            case 'i':
+                P.setCelular(JOptionPane.showInputDialog("Ingrese el Nuevo Celular de " + P.getNombre() + ": ").toCharArray());
+                break;
+            case 'j':
+                P.setCorreo(P.ValidarCorreo(P.getNombre()));
+                break;
+        }
+        return P;
+    }
+      
+     public char MenuModificarAbono() {
+        char Op;
+
+        Op = JOptionPane.showInputDialog("***Menú Modificar***\n"
+                + "a.-> Formula.\n"
+                + "b.-> Codigo.\n"
+                + "c.-> Nombre.\n"
+                + "d.-> Cantidad.\n"
+                + "e.-> Tipo.\n"
+                + "f.-> Precio.\n"
+                + "Su Elección Es:").toLowerCase().charAt(0);
+
+        if (Op < 'a' || Op > 'f') {
+            JOptionPane.showMessageDialog(null, "La Opción Ingresada NO Existe!!!\n"
+                    + "Favor Vuelva a Intentarlo!!!");
+            Op = MenuModificarAbono();
+        }
+        return Op;
+    }
+      
+      public Abono Modificar(Abono P) {
+        char OpMod;
+        
+        OpMod = MenuModificarAbono();
+        switch (OpMod) {
+            case 'a':
+                P.setFormula(JOptionPane.showInputDialog("Ingrese la Nueva Formula de " + P.getNombre() + ": ").toCharArray());           
+                break;
+            case 'b':
+                P.setCodigo(JOptionPane.showInputDialog("Ingrese el Nuevo Codigo de " + P.getNombre() + ": ").toCharArray());
+                break;
+            case 'c':
+                P.setNombre(JOptionPane.showInputDialog("Ingrese el Nuevo Nombre de " + P.getNombre() + ": "));
+                break;
+            case 'd':
+                P.setCantidad((JOptionPane.showInputDialog("Ingrese la Nueva Cantidad de " + P.getNombre() + ": ")));
+                break;
+            case 'e':
+                P.setTipo(JOptionPane.showInputDialog("Ingrese el Nuevo Tipo de " + P.getNombre() + ": "));
+                break;
+            case 'f':
+                P.setPrecio((JOptionPane.showInputDialog("Ingrese el Nuevo Precio de " + P.getNombre() + ": ")));
+                break;
+        }
+        return P;
+    } 
+      
+     public char MenuModificarPlaguicida() {
+        char Op;
+
+        Op = JOptionPane.showInputDialog("***Menú Modificar***\n"
+                + "a.-> Aplicacion.\n"
+                + "b.-> Toxicidad.\n"
+                + "c.-> Codigo.\n"
+                + "d.-> Nombre.\n"
+                + "e.-> Cantidad.\n"
+                + "f.-> Tipo.\n"
+                + "g.-> Precio.\n"
+                + "Su Elección Es:").toLowerCase().charAt(0);
+
+        if (Op < 'a' || Op > 'f') {
+            JOptionPane.showMessageDialog(null, "La Opción Ingresada NO Existe!!!\n"
+                    + "Favor Vuelva a Intentarlo!!!");
+            Op = MenuModificarPlaguicida();
+        }
+        return Op;
+    }
+      
+      public Plaguicida Modificar(Plaguicida P) {
+        char OpMod;
+        
+        OpMod = MenuModificarPlaguicida();
+        switch (OpMod) {
+            case 'a':
+                P.setAplicacion(JOptionPane.showInputDialog("Ingrese la Nueva Aplicacion de " + P.getNombre() + ": "));           
+                break;
+            case 'b':
+                P.setToxicidad(JOptionPane.showInputDialog("Ingrese el Nuevo Toxicidad de " + P.getNombre() + ": "));
+                break;
+            case 'c':
+                P.setCodigo(JOptionPane.showInputDialog("Ingrese el Nuevo Codigo de " + P.getNombre() + ": ").toCharArray());
+                break;
+            case 'd':
+                P.setNombre(JOptionPane.showInputDialog("Ingrese el Nuevo Nombre de " + P.getNombre() + ": "));
+                break;
+            case 'e':
+                P.setCantidad((JOptionPane.showInputDialog("Ingrese la Nueva Cantidad de " + P.getNombre() + ": ")));
+                break;
+            case 'f':
+                P.setTipo(JOptionPane.showInputDialog("Ingrese el Nuevo Tipo de " + P.getNombre() + ": "));
+                break;
+            case 'g':
+                P.setPrecio((JOptionPane.showInputDialog("Ingrese el Nuevo Precio de " + P.getNombre() + ": ")));
+                break;                
+        }
+        return P;
+    } 
       
 }
